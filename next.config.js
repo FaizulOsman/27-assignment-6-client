@@ -11,6 +11,7 @@ const nextConfig = {
       "webapi3.adata.com",
       "images.saymedia-content.com",
       "dicendpads.com",
+      "static.vecteezy.com",
     ],
   },
 };
