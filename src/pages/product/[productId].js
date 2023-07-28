@@ -11,13 +11,13 @@ const ProductDetailPage = () => {
     image:
       "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
     productName: "Product 1",
-    category: "CPU_Processor",
+    category: "CPU / Processor",
     price: 199.99,
     status: "In Stock",
     individualRating: 4.7,
     averageRating: 4.5,
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
     keyFeatures: {
       Brand: "Brand X",
       Model: "Model XYZ",
@@ -193,6 +193,11 @@ const ProductDetailPage = () => {
                 </a>
               </span>
             </div>
+            <div className="mb-2 ml-4">
+              {Object.keys(product?.keyFeatures)?.map((key) => (
+                <li key={key}>{`${key} : ${product?.keyFeatures[key]}`}</li>
+              ))}
+            </div>
             <p className="leading-relaxed">{product?.description}</p>
 
             <div className="flex pt-3 mt-3 border-t-2 border-gray-100">
@@ -219,7 +224,7 @@ const ProductDetailPage = () => {
         <div className="my-5">
           <h1 className="text-3xl mb-3 font-semibold text-center">Reviews</h1>
           {product?.reviews?.map((review) => (
-            <div key={review?.id}>
+            <div key={review?.id} className="mb-4 shadow-md hover:shadow-lg">
               <a className="inline-flex items-center my-2">
                 <Image
                   src="https://static.vecteezy.com/system/resources/previews/009/383/461/original/man-face-clipart-design-illustration-free-png.png"
