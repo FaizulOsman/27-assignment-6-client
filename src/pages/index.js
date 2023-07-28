@@ -191,7 +191,7 @@ const HomePage = () => {
                   alt="product image"
                   width={300}
                   height={300}
-                  responsive
+                  responsive="true"
                 />
               </figure>
               <div className="card-body p-4">

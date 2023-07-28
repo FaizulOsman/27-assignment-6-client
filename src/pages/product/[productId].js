@@ -56,7 +56,7 @@ const ProductDetailPage = () => {
               className="w-full lg:h-auto h-64 object-cover object-center rounded"
               width={300}
               height={150}
-              responsive
+              responsive="true"
             />
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -227,7 +227,7 @@ const ProductDetailPage = () => {
                   className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                   width={300}
                   height={150}
-                  responsive
+                  responsive="true"
                 />
                 <span className="flex-grow flex flex-col pl-4">
                   <span className="title-font font-medium text-gray-900">

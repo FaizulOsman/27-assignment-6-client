@@ -12,6 +12,8 @@ const nextConfig = {
       "images.saymedia-content.com",
       "dicendpads.com",
       "static.vecteezy.com",
+      "lh3.googleusercontent.com",
+      "avatars.githubusercontent.com",
     ],
   },
 };

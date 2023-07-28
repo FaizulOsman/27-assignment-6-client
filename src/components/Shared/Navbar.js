@@ -1,9 +1,13 @@
+import { useSession, signOut } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
   return (
-    <div className="w-11/12 max-w-[1200px] mx-auto">
+    <div className="">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -62,7 +66,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">BuildMasterPC</a>
+          <a className="hidden sm:flex btn btn-ghost normal-case text-xl">
+            BuildMasterPC
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -105,6 +111,49 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <a className="btn">PC Builder</a>
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                {session?.user?.image ? (
+                  <Image
+                    src={session?.user?.image}
+                    alt="avatar"
+                    width={20}
+                    height={20}
+                  />
+                ) : (
+                  <Image
+                    src="https://static.vecteezy.com/system/resources/previews/009/383/461/original/man-face-clipart-design-illustration-free-png.png"
+                    alt="avatar"
+                    width={20}
+                    height={20}
+                  />
+                )}
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              {session?.user ? (
+                <>
+                  <li>
+                    <a>{session?.user?.name}</a>
+                  </li>
+                  <li>
+                    <a>{session?.user?.email}</a>
+                  </li>
+                  <li>
+                    <a onClick={() => signOut()}>Logout</a>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link href="/login">Login</Link>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

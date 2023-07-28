@@ -59,7 +59,7 @@ const FeaturedCategories = () => {
                   className="object-cover object-center h-full w-full"
                   width={300}
                   height={300}
-                  responsive
+                  responsive="true"
                 />
               </div>
               <h2 className="text-md font-medium title-font text-center text-gray-900 mt-2">
