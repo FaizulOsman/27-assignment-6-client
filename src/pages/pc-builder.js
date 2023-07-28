@@ -44,7 +44,7 @@ const PCBuilder = () => {
       <div className="min-h-screen py-10 text-black">
         <div className="w-11/12 sm:w-3/4 mx-auto flex flex-col gap-4">
           {categories?.map((category) => (
-            <Link href={`/categories/${category?.category}`} key={category?.id}>
+            <Link href={`/components/${category?.category}`} key={category?.id}>
               <div className="w-full">
                 <div className="flex items-center gap-4 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 duration-100 p-4 sm:flex-row flex-col">
                   <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 flex-shrink-0">
