@@ -1,10 +1,18 @@
+import { addComponent } from "@/redux/pcBuilderSlice/pcBuilderSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
 
-const CategoryPage = () => {
+const ComponentsPage = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
   console.log(router?.query?.category);
+
+  const handleAddToBuilder = (product) => {
+    dispatch(addComponent(product));
+    router.push("/pc-builder");
+  };
 
   const featuredProducts = [
     {
@@ -12,7 +20,7 @@ const CategoryPage = () => {
       image:
         "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       productName: "Product 1",
-      category: "CPU / Processor",
+      category: "CPU - Processor",
       price: 199.99,
       status: "In Stock",
       rating: 4.5,
@@ -179,11 +187,11 @@ const CategoryPage = () => {
 
   return (
     <div className="min-h-screen text-black">
-      <div className="w-3/4 mx-auto">
+      <div className="w-full sm:w-3/4 mx-auto">
         {featuredProducts?.map((product) => (
           <div key={product?.id} className="p-4   w-full">
             <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-4 sm:flex-row flex-col">
-              <div className="w-36 h-36 sm:mr-4 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-500 flex-shrink-0">
+              <div className="w-full h-40 sm:w-36 sm:h-36 sm:mr-4 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-500 flex-shrink-0">
                 <Image
                   src={product?.image}
                   className="w-full h-full rounded-lg"
@@ -227,10 +235,10 @@ const CategoryPage = () => {
                           key={i}
                           fill="none"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-4 h-4 text-green-500"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          className="w-4 h-4 text-green-500"
                           viewBox="0 0 24 24"
                         >
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -242,7 +250,10 @@ const CategoryPage = () => {
                 <p className="text-base">Status: {product?.status}</p>
               </div>
               <div className="flex items-center">
-                <button className="btn btn-accent text-white">
+                <button
+                  onClick={() => handleAddToBuilder(product)}
+                  className="mt-3 sm:mt-0 w-full btn btn-accent text-white"
+                >
                   Add To Builder
                 </button>
               </div>
@@ -254,4 +265,4 @@ const CategoryPage = () => {
   );
 };
 
-export default CategoryPage;
+export default ComponentsPage;
