@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="w-11/12 max-w-[1200px] mx-auto">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -68,7 +68,7 @@ const Navbar = () => {
             <li tabIndex={0}>
               <details>
                 <summary>Categories</summary>
-                <ul className="p-2">
+                <ul className="p-2 z-50">
                   <li>
                     <Link href="/">CPU/Processor</Link>
                   </li>
