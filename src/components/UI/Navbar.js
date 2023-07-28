@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
@@ -27,51 +28,75 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <a>Parent</a>
+                <a>Categories</a>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <Link href="/">CPU/Processor</Link>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <Link href="/">Motherboard</Link>
+                  </li>
+                  <li>
+                    <Link href="/">RAM</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Power Supply Unit</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Storage Device</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Monitor</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Others</Link>
                   </li>
                 </ul>
               </li>
-              <li>
-                <a>Item 3</a>
-              </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">BuildMasterPC</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <Link href="/">Home</Link>
             </li>
             <li tabIndex={0}>
               <details>
-                <summary>Parent</summary>
+                <summary>Categories</summary>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <Link href="/">CPU/Processor</Link>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <Link href="/">Motherboard</Link>
+                  </li>
+                  <li>
+                    <Link href="/">RAM</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Power_Supply_Unit</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Storage_Device</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Monitor</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Others</Link>
                   </li>
                 </ul>
               </details>
             </li>
-            <li>
-              <a>Item 3</a>
-            </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn">PC Builder</a>
         </div>
       </div>
     </div>
