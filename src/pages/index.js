@@ -78,7 +78,6 @@ const HomePage = () => {
           <Link key={product?.id} href={`/product/${product?.id}`}>
             <div className="card w-full glass hover:bg-gray-100">
               <figure>
-                {/* <img src={product?.image} alt="car!" /> */}
                 <Image
                   src={product?.image}
                   alt="product image"

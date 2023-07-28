@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import React from "react";
 
 const FeaturedCategories = () => {
@@ -52,10 +53,13 @@ const FeaturedCategories = () => {
               className="p-2 w-full sm:mb-0 mb-6 hover:bg-gray-100 hover:scale-105 duration-300 border rounded-lg shadow-md cursor-pointer"
             >
               <div className="rounded-lg h-28 overflow-hidden">
-                <img
-                  alt="content"
-                  className="object-cover object-center h-full w-full"
+                <Image
                   src={item?.image}
+                  alt="product category image"
+                  className="object-cover object-center h-full w-full"
+                  width={300}
+                  height={300}
+                  responsive
                 />
               </div>
               <h2 className="text-md font-medium title-font text-center text-gray-900 mt-2">
