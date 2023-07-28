@@ -1,3 +1,5 @@
+import Footer from "@/components/Shared/Footer";
+import Navbar from "@/components/Shared/Navbar";
 import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import RootLayout from "@/components/layouts/RootLayout";
 import Image from "next/image";
@@ -177,52 +179,56 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="mt-16">
-      <h1 className="text-2xl font-bold text-center text-black">
-        Featured Products
-      </h1>
-      <div className="container mx-auto bg-white pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {featuredProducts?.map((product) => (
-          <Link key={product?.id} href={`/product/${product?.id}`}>
-            <div className="card w-full glass hover:bg-gray-100">
-              <figure>
-                <Image
-                  src={product?.image}
-                  alt="product image"
-                  width={300}
-                  height={300}
-                  responsive="true"
-                />
-              </figure>
-              <div className="card-body p-4">
-                <h2 className="card-title">{product?.productName}</h2>
-                <p>
-                  <span className="font-semibold">Category:</span>{" "}
-                  {product?.category}
-                </p>
-                <p>
-                  <span className="font-semibold">Status:</span>{" "}
-                  {product?.status}
-                </p>
-                <div className="flex justify-between">
-                  <span className="flex items-center mr-1 font-bold">
-                    {product?.rating}
-                    <AiFillStar className="ml-1 text-orange-500" />
-                  </span>
-                  <span className="font-bold">${product?.price}</span>
+    <>
+      <Navbar />
+      <div className="mt-16 w-11/12 max-w-[1200px] mx-auto">
+        <h1 className="text-2xl font-bold text-center text-black">
+          Featured Products
+        </h1>
+        <div className="container mx-auto bg-white pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {featuredProducts?.map((product) => (
+            <Link key={product?.id} href={`/product/${product?.id}`}>
+              <div className="card w-full glass hover:bg-gray-100">
+                <figure>
+                  <Image
+                    src={product?.image}
+                    alt="product image"
+                    width={300}
+                    height={300}
+                    responsive="true"
+                  />
+                </figure>
+                <div className="card-body p-4">
+                  <h2 className="card-title">{product?.productName}</h2>
+                  <p>
+                    <span className="font-semibold">Category:</span>{" "}
+                    {product?.category}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Status:</span>{" "}
+                    {product?.status}
+                  </p>
+                  <div className="flex justify-between">
+                    <span className="flex items-center mr-1 font-bold">
+                      {product?.rating}
+                      <AiFillStar className="ml-1 text-orange-500" />
+                    </span>
+                    <span className="font-bold">${product?.price}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
+        <FeaturedCategories />
       </div>
-      <FeaturedCategories />
-    </div>
+      <Footer />
+    </>
   );
 };
 
 export default HomePage;
 
-HomePage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
-};
+// HomePage.getLayout = function getLayout(page) {
+//   return <RootLayout>{page}</RootLayout>;
+// };

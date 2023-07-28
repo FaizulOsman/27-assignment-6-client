@@ -5,6 +5,7 @@ import { ImPower } from "react-icons/im";
 import { MdStorage } from "react-icons/md";
 import { FiMonitor } from "react-icons/fi";
 import Link from "next/link";
+import Navbar from "@/components/Shared/Navbar";
 
 const PCBuilder = () => {
   const categories = [
@@ -41,6 +42,7 @@ const PCBuilder = () => {
   ];
   return (
     <div>
+      <Navbar />
       <div className="min-h-screen py-10 text-black">
         <div className="w-11/12 sm:w-3/4 mx-auto flex flex-col gap-4">
           {categories?.map((category) => (

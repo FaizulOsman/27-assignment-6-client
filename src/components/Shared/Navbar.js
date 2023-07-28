@@ -7,7 +7,7 @@ const Navbar = () => {
   const { data: session } = useSession();
 
   return (
-    <div className="">
+    <div className="w-11/12 max-w-[1200px] mx-auto">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">

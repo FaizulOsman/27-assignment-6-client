@@ -1,4 +1,5 @@
 import Footer from "@/components/Shared/Footer";
+import Navbar from "@/components/Shared/Navbar";
 import { addComponent } from "@/redux/pcBuilderSlice/pcBuilderSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -188,7 +189,8 @@ const ComponentsPage = () => {
 
   return (
     <div>
-      <div className="min-h-screen text-black">
+      <Navbar />
+      <div className="min-h-screen text-black mt-16 w-11/12 max-w-[1200px] mx-auto">
         <div className="w-full sm:w-3/4 mx-auto">
           {featuredProducts?.map((product) => (
             <div key={product?.id} className="p-4   w-full">

@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Footer from "@/components/Shared/Footer";
+import Navbar from "@/components/Shared/Navbar";
 import RootLayout from "@/components/layouts/RootLayout";
 import Image from "next/image";
 import Link from "next/link";
@@ -183,7 +185,8 @@ const CategoriesPage = () => {
 
   return (
     <>
-      <div className="min-h-screen mb-16">
+      <Navbar />
+      <div className="min-h-screen mb-16 mt-16 w-11/12 max-w-[1200px] mx-auto">
         <div className="container mx-auto bg-white pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {featuredProducts?.map((product) => (
             <Link key={product?.id} href={`/product/${product?.id}`}>
@@ -220,12 +223,9 @@ const CategoriesPage = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
 
 export default CategoriesPage;
-
-CategoriesPage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
-};
