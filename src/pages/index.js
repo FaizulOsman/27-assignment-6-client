@@ -15,6 +15,24 @@ const HomePage = () => {
       price: 19.99,
       status: "In Stock",
       rating: 4.1,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      keyFeatures: {
+        Brand: "Brand X",
+        Model: "Model XYZ",
+        Specification: "Spec ABC",
+        Port: "Port Type",
+        Type: "Type 123",
+        Voltage: "110V",
+      },
+      reviews: [
+        {
+          id: 1,
+          username: "user123",
+          rating: 5,
+          comment: "Great product!",
+        },
+      ],
     },
     {
       id: 2,
@@ -25,6 +43,24 @@ const HomePage = () => {
       price: 29.99,
       status: "In Stock",
       rating: 4.2,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      keyFeatures: {
+        Brand: "Brand X",
+        Model: "Model XYZ",
+        Specification: "Spec ABC",
+        Port: "Port Type",
+        Type: "Type 123",
+        Voltage: "110V",
+      },
+      reviews: [
+        {
+          id: 1,
+          username: "user123",
+          rating: 5,
+          comment: "Great product!",
+        },
+      ],
     },
     {
       id: 3,
@@ -35,6 +71,24 @@ const HomePage = () => {
       price: 39.99,
       status: "In Stock",
       rating: 4.3,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      keyFeatures: {
+        Brand: "Brand X",
+        Model: "Model XYZ",
+        Specification: "Spec ABC",
+        Port: "Port Type",
+        Type: "Type 123",
+        Voltage: "110V",
+      },
+      reviews: [
+        {
+          id: 1,
+          username: "user123",
+          rating: 5,
+          comment: "Great product!",
+        },
+      ],
     },
     {
       id: 4,
@@ -45,6 +99,24 @@ const HomePage = () => {
       price: 49.99,
       status: "In Stock",
       rating: 4.4,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      keyFeatures: {
+        Brand: "Brand X",
+        Model: "Model XYZ",
+        Specification: "Spec ABC",
+        Port: "Port Type",
+        Type: "Type 123",
+        Voltage: "110V",
+      },
+      reviews: [
+        {
+          id: 1,
+          username: "user123",
+          rating: 5,
+          comment: "Great product!",
+        },
+      ],
     },
     {
       id: 5,
@@ -55,6 +127,24 @@ const HomePage = () => {
       price: 59.99,
       status: "Out of stock",
       rating: 4.5,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      keyFeatures: {
+        Brand: "Brand X",
+        Model: "Model XYZ",
+        Specification: "Spec ABC",
+        Port: "Port Type",
+        Type: "Type 123",
+        Voltage: "110V",
+      },
+      reviews: [
+        {
+          id: 1,
+          username: "user123",
+          rating: 5,
+          comment: "Great product!",
+        },
+      ],
     },
     {
       id: 6,
@@ -65,6 +155,24 @@ const HomePage = () => {
       price: 69.99,
       status: "In Stock",
       rating: 4.6,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
+      keyFeatures: {
+        Brand: "Brand X",
+        Model: "Model XYZ",
+        Specification: "Spec ABC",
+        Port: "Port Type",
+        Type: "Type 123",
+        Voltage: "110V",
+      },
+      reviews: [
+        {
+          id: 1,
+          username: "user123",
+          rating: 5,
+          comment: "Great product!",
+        },
+      ],
     },
   ];
 
@@ -88,12 +196,10 @@ const HomePage = () => {
               </figure>
               <div className="card-body p-4">
                 <h2 className="card-title">{product?.productName}</h2>
-
                 <p>
                   <span className="font-semibold">Category:</span>{" "}
                   {product?.category}
                 </p>
-
                 <p>
                   <span className="font-semibold">Status:</span>{" "}
                   {product?.status}
