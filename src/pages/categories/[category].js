@@ -1,10 +1,15 @@
-import FeaturedCategories from "@/components/UI/FeaturedCategories";
+/* eslint-disable @next/next/no-img-element */
 import RootLayout from "@/components/layouts/RootLayout";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
 import { AiFillStar } from "react-icons/ai";
 
-const HomePage = () => {
+const CategoryPage = () => {
+  const router = useRouter();
+  console.log(router?.query?.category);
+
   const featuredProducts = [
     {
       id: 1,
@@ -177,10 +182,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="mt-16">
-      <h1 className="text-2xl font-bold text-center text-black">
-        Featured Products
-      </h1>
+    <div className="min-h-screen">
       <div className="container mx-auto bg-white pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {featuredProducts?.map((product) => (
           <Link key={product?.id} href={`/product/${product?.id}`}>
@@ -216,13 +218,12 @@ const HomePage = () => {
           </Link>
         ))}
       </div>
-      <FeaturedCategories />
     </div>
   );
 };
 
-export default HomePage;
+export default CategoryPage;
 
-HomePage.getLayout = function getLayout(page) {
+CategoryPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };

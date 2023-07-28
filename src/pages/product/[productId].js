@@ -11,7 +11,7 @@ const ProductDetailPage = () => {
     image:
       "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
     productName: "Product 1",
-    category: "CPU / Processor",
+    category: "CPU_Processor",
     price: 199.99,
     status: "In Stock",
     individualRating: 4.7,
