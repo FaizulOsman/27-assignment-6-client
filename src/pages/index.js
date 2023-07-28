@@ -11,7 +11,7 @@ const HomePage = () => {
       image:
         "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
       productName: "Product 1",
-      category: "CPU_Processor",
+      category: "CPU - Processor",
       price: 19.99,
       status: "In Stock",
       rating: 4.1,
@@ -95,7 +95,7 @@ const HomePage = () => {
       image:
         "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
       productName: "Product 4",
-      category: "Power_Supply_Unit",
+      category: "Power Supply Unit",
       price: 49.99,
       status: "In Stock",
       rating: 4.4,
@@ -123,7 +123,7 @@ const HomePage = () => {
       image:
         "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
       productName: "Product 5",
-      category: "Storage_Device",
+      category: "Storage Device",
       price: 59.99,
       status: "Out of stock",
       rating: 4.5,
