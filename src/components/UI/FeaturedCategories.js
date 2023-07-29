@@ -2,8 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Loader from "./Loader";
 
 const FeaturedCategories = ({ categories }) => {
+  if (!categories) {
+    return <Loader />;
+  }
+
   return (
     <section className="text-gray-600 body-font mt-16">
       <h1 className="text-2xl font-bold text-center text-black">
