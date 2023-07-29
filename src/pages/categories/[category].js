@@ -16,12 +16,12 @@ const CategoriesPage = () => {
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
       productName: "Product 1",
       category: "CPU / Processor",
-      price: 199.99,
+      price: 19.99,
       status: "In Stock",
-      rating: 4.5,
+      rating: 4.1,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
       keyFeatures: {
@@ -44,10 +44,10 @@ const CategoriesPage = () => {
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
       productName: "Product 2",
       category: "Motherboard",
-      price: 149.99,
+      price: 29.99,
       status: "In Stock",
       rating: 4.2,
       description:
@@ -72,12 +72,12 @@ const CategoriesPage = () => {
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      productName: "Product 1",
-      category: "CPU / Processor",
-      price: 199.99,
+        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
+      productName: "Product 3",
+      category: "RAM",
+      price: 39.99,
       status: "In Stock",
-      rating: 4.5,
+      rating: 4.3,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
       keyFeatures: {
@@ -100,12 +100,12 @@ const CategoriesPage = () => {
     {
       id: 4,
       image:
-        "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      productName: "Product 2",
-      category: "Motherboard",
-      price: 149.99,
+        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
+      productName: "Product 4",
+      category: "Power Supply Unit",
+      price: 49.99,
       status: "In Stock",
-      rating: 4.2,
+      rating: 4.4,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
       keyFeatures: {
@@ -128,11 +128,11 @@ const CategoriesPage = () => {
     {
       id: 5,
       image:
-        "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      productName: "Product 1",
-      category: "CPU / Processor",
-      price: 199.99,
-      status: "In Stock",
+        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
+      productName: "Product 5",
+      category: "Storage Device",
+      price: 59.99,
+      status: "Out of stock",
       rating: 4.5,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
@@ -156,12 +156,12 @@ const CategoriesPage = () => {
     {
       id: 6,
       image:
-        "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvZ3dhcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      productName: "Product 2",
-      category: "Motherboard",
-      price: 149.99,
+        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
+      productName: "Product 6",
+      category: "Monitor",
+      price: 69.99,
       status: "In Stock",
-      rating: 4.2,
+      rating: 4.6,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
       keyFeatures: {
