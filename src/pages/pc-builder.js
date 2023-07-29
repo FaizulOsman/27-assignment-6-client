@@ -13,7 +13,7 @@ const PCBuilder = () => {
   const categories = [
     {
       id: "1",
-      category: "CPU - Processor",
+      category: "CPU-Processor",
       icon: <BsCpu className="text-2xl" />,
     },
     {
@@ -153,6 +153,11 @@ const PCBuilder = () => {
               )}
             </div>
           ))}
+          <div className="flex justify-center my-5">
+            <button className="btn btn-primary text-white " disabled={true}>
+              Complete Build
+            </button>
+          </div>
         </div>
       </div>
       <Footer />

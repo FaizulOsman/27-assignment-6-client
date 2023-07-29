@@ -38,13 +38,13 @@ const Navbar = () => {
                 <a>Categories</a>
                 <ul className="p-2">
                   <li>
-                    <Link href="/categories/CPU-Processor">CPU/Processor</Link>
+                    <Link href="/categories/CPU-Processor">CPU-Processor</Link>
                   </li>
                   <li>
                     <Link href="/categories/Motherboard">Motherboard</Link>
                   </li>
                   <li>
-                    <Link href="/categories/Ram">RAM</Link>
+                    <Link href="/categories/RAM">RAM</Link>
                   </li>
                   <li>
                     <Link href="/categories/Power Supply Unit">
@@ -80,21 +80,21 @@ const Navbar = () => {
                 <summary>Categories</summary>
                 <ul className="p-2 z-50">
                   <li>
-                    <Link href="/categories/CPU_Processor">CPU/Processor</Link>
+                    <Link href="/categories/CPU-Processor">CPU-Processor</Link>
                   </li>
                   <li>
                     <Link href="/categories/Motherboard">Motherboard</Link>
                   </li>
                   <li>
-                    <Link href="/categories/Ram">RAM</Link>
+                    <Link href="/categories/RAM">RAM</Link>
                   </li>
                   <li>
-                    <Link href="/categories/Power_Supply_Unit">
+                    <Link href="/categories/Power Supply Unit">
                       Power Supply Unit
                     </Link>
                   </li>
                   <li>
-                    <Link href="/categories/Storage_Device">
+                    <Link href="/categories/Storage Device">
                       Storage Device
                     </Link>
                   </li>

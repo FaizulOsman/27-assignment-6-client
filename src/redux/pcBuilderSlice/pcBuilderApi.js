@@ -10,7 +10,15 @@ const productApi = apiSlice.injectEndpoints({
       query: (id) => `/pc-builder/products/${id}`,
       providesTags: ["pc-builder"],
     }),
+    getProductsByCategory: builder.query({
+      query: (category) => `/pc-builder/categories/${category}`,
+      providesTags: ["pc-builder"],
+    }),
   }),
 });
 
-export const { useGetProductsQuery, useGetSingleProductQuery } = productApi;
+export const {
+  useGetProductsQuery,
+  useGetSingleProductQuery,
+  useGetProductsByCategoryQuery,
+} = productApi;

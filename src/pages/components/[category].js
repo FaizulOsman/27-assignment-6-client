@@ -6,186 +6,16 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch } from "react-redux";
 
-const ComponentsPage = () => {
+const ComponentsPage = ({ products }) => {
   const dispatch = useDispatch();
   const router = useRouter();
-  console.log(router?.query?.category);
 
   const handleAddToBuilder = (product) => {
     dispatch(addComponent(product));
     router.push("/pc-builder");
   };
 
-  const featuredProducts = [
-    {
-      id: 1,
-      image:
-        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-      productName: "Product 1",
-      category: "CPU - Processor",
-      price: 19.99,
-      status: "In Stock",
-      rating: 4.1,
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-      keyFeatures: {
-        Brand: "Brand X",
-        Model: "Model XYZ",
-        Specification: "Spec ABC",
-        Port: "Port Type",
-        Type: "Type 123",
-        Voltage: "110V",
-      },
-      reviews: [
-        {
-          id: 1,
-          username: "user123",
-          rating: 5,
-          comment: "Great product!",
-        },
-      ],
-    },
-    {
-      id: 2,
-      image:
-        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-      productName: "Product 2",
-      category: "Motherboard",
-      price: 29.99,
-      status: "In Stock",
-      rating: 4.2,
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-      keyFeatures: {
-        Brand: "Brand X",
-        Model: "Model XYZ",
-        Specification: "Spec ABC",
-        Port: "Port Type",
-        Type: "Type 123",
-        Voltage: "110V",
-      },
-      reviews: [
-        {
-          id: 1,
-          username: "user123",
-          rating: 5,
-          comment: "Great product!",
-        },
-      ],
-    },
-    {
-      id: 3,
-      image:
-        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-      productName: "Product 3",
-      category: "RAM",
-      price: 39.99,
-      status: "In Stock",
-      rating: 4.3,
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-      keyFeatures: {
-        Brand: "Brand X",
-        Model: "Model XYZ",
-        Specification: "Spec ABC",
-        Port: "Port Type",
-        Type: "Type 123",
-        Voltage: "110V",
-      },
-      reviews: [
-        {
-          id: 1,
-          username: "user123",
-          rating: 5,
-          comment: "Great product!",
-        },
-      ],
-    },
-    {
-      id: 4,
-      image:
-        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-      productName: "Product 4",
-      category: "Power Supply Unit",
-      price: 49.99,
-      status: "In Stock",
-      rating: 4.4,
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-      keyFeatures: {
-        Brand: "Brand X",
-        Model: "Model XYZ",
-        Specification: "Spec ABC",
-        Port: "Port Type",
-        Type: "Type 123",
-        Voltage: "110V",
-      },
-      reviews: [
-        {
-          id: 1,
-          username: "user123",
-          rating: 5,
-          comment: "Great product!",
-        },
-      ],
-    },
-    {
-      id: 5,
-      image:
-        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-      productName: "Product 5",
-      category: "Storage Device",
-      price: 59.99,
-      status: "Out of stock",
-      rating: 4.5,
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-      keyFeatures: {
-        Brand: "Brand X",
-        Model: "Model XYZ",
-        Specification: "Spec ABC",
-        Port: "Port Type",
-        Type: "Type 123",
-        Voltage: "110V",
-      },
-      reviews: [
-        {
-          id: 1,
-          username: "user123",
-          rating: 5,
-          comment: "Great product!",
-        },
-      ],
-    },
-    {
-      id: 6,
-      image:
-        "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-      productName: "Product 6",
-      category: "Monitor",
-      price: 69.99,
-      status: "In Stock",
-      rating: 4.6,
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur consectetur modi eveniet, repudiandae commodi sint eaque molestiae quod voluptatibus eos fugiat sit maxime veniam fugit officia perspiciatis cupiditate itaque illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-      keyFeatures: {
-        Brand: "Brand X",
-        Model: "Model XYZ",
-        Specification: "Spec ABC",
-        Port: "Port Type",
-        Type: "Type 123",
-        Voltage: "110V",
-      },
-      reviews: [
-        {
-          id: 1,
-          username: "user123",
-          rating: 5,
-          comment: "Great product!",
-        },
-      ],
-    },
-  ];
+  const featuredProducts = products;
 
   return (
     <div>
@@ -272,3 +102,30 @@ const ComponentsPage = () => {
 };
 
 export default ComponentsPage;
+
+export const getStaticPaths = async function () {
+  const res = await fetch("http://localhost:5000/api/v1/pc-builder/products");
+  const products = await res.json();
+
+  const paths = products?.data?.map((product) => ({
+    params: { category: product.category },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async function (context) {
+  const { params } = context;
+
+  const res = await fetch(
+    `http://localhost:5000/api/v1/pc-builder/categories/${params?.category}`
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      products: data?.data,
+    },
+    revalidate: 30,
+  };
+};

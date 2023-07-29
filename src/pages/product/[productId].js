@@ -1,58 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Shared/Footer";
 import Navbar from "@/components/Shared/Navbar";
-import { useGetSingleProductQuery } from "@/redux/pcBuilderSlice/pcBuilderApi";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 
-const ProductDetailPage = () => {
-  const router = useRouter();
-  const id = router?.query?.productId;
-
-  const { data: singleProduct } = useGetSingleProductQuery(id);
-
-  let product = singleProduct?.data;
-
-  // const product = {
-  //   id: 1,
-  //   image:
-  //     "https://cdn.autonomous.ai/static/upload/images/common/upload/20200930/6f2cce37d2c.jpg",
-  //   productName: "Product 1",
-  //   category: "CPU / Processor",
-  //   price: 199.99,
-  //   status: "In Stock",
-  //   individualRating: 4.7,
-  //   averageRating: 4.5,
-  //   description:
-  //     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, dolore dignissimos. Reprehenderit odit rem quidem perferendis, ea consequatur illo facere! Optio distinctio ea enim quasi eius iure, aliquam blanditiis saepe.",
-  //   keyFeatures: {
-  //     Brand: "Brand X",
-  //     Model: "Model XYZ",
-  //     Specification: "Spec ABC",
-  //     Port: "Port Type",
-  //     Type: "Type 123",
-  //     Voltage: "110V",
-  //   },
-  //   reviews: [
-  //     {
-  //       id: 1,
-  //       username: "user123",
-  //       comment: "Great product!",
-  //     },
-  //     {
-  //       id: 2,
-  //       username: "user123",
-  //       comment: "Nice product!",
-  //     },
-  //     {
-  //       id: 3,
-  //       username: "user123",
-  //       comment: "Awesome product!",
-  //     },
-  //   ],
-  // };
-
+const ProductDetailPage = ({ product }) => {
   return (
     <>
       <Navbar />
@@ -269,3 +221,29 @@ const ProductDetailPage = () => {
 };
 
 export default ProductDetailPage;
+
+export const getStaticPaths = async function () {
+  const res = await fetch("http://localhost:5000/api/v1/pc-builder/products");
+  const products = await res.json();
+
+  const paths = products?.data?.map((product) => ({
+    params: { productId: product._id },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async function (context) {
+  const { params } = context;
+  const res = await fetch(
+    `http://localhost:5000/api/v1/pc-builder/products/${params?.productId}`
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      product: data?.data,
+    },
+    revalidate: 30,
+  };
+};
