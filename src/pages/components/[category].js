@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 const ComponentsPage = ({ products }) => {
   const dispatch = useDispatch();
   const router = useRouter();
-
+  console.log(products);
   const handleAddToBuilder = (product) => {
     dispatch(addComponent(product));
     router.push("/pc-builder");
@@ -44,7 +44,7 @@ const ComponentsPage = ({ products }) => {
                   <div className="flex mb-1">
                     <span className="flex items-center">
                       <span className="text-gray-600 mr-3">
-                        {product?.rating} Stars
+                        {product?.rating}
                       </span>
                       {new Array(Math.floor(product?.rating))
                         .fill(null)
@@ -62,22 +62,23 @@ const ComponentsPage = ({ products }) => {
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                           </svg>
                         ))}
-                      {new Array(5 - Math.floor(product?.rating))
-                        .fill(null)
-                        .map((star, i) => (
-                          <svg
-                            key={i}
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            className="w-4 h-4 text-green-500"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                          </svg>
-                        ))}
+                      {product?.rating &&
+                        new Array(5 - Math.floor(product?.rating))
+                          .fill(null)
+                          .map((star, i) => (
+                            <svg
+                              key={i}
+                              fill="none"
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              className="w-4 h-4 text-green-500"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                          ))}
                     </span>
                   </div>
                   <p className="text-base">Price: ${product?.price}</p>
