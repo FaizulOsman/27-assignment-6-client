@@ -1,48 +1,10 @@
 import Footer from "@/components/Shared/Footer";
-import { BsCpu, BsMotherboard } from "react-icons/bs";
-import { CgSmartphoneRam } from "react-icons/cg";
-import { ImPower } from "react-icons/im";
-import { MdStorage } from "react-icons/md";
-import { FiMonitor } from "react-icons/fi";
 import Link from "next/link";
 import Navbar from "@/components/Shared/Navbar";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
-const PCBuilder = () => {
-  const categories = [
-    {
-      id: "1",
-      category: "CPU-Processor",
-      icon: <BsCpu className="text-2xl" />,
-    },
-    {
-      id: "2",
-      category: "Motherboard",
-      icon: <BsMotherboard className="text-2xl" />,
-    },
-    {
-      id: "3",
-      category: "RAM",
-      icon: <CgSmartphoneRam className="text-2xl" />,
-    },
-    {
-      id: "4",
-      category: "Power Supply Unit",
-      icon: <ImPower className="text-2xl" />,
-    },
-    {
-      id: "5",
-      category: "Storage Device",
-      icon: <MdStorage className="text-2xl" />,
-    },
-    {
-      id: "6",
-      category: "Monitor",
-      icon: <FiMonitor className="text-2xl" />,
-    },
-  ];
-
+const PCBuilder = ({ categories }) => {
   const { pc } = useSelector((state) => state?.pcBuilder);
 
   Object.keys(pc)?.map((key) => console.log("key", key, "value", pc[key]));
@@ -61,7 +23,14 @@ const PCBuilder = () => {
                 <div className="w-full">
                   <div className="flex items-center gap-4 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 duration-100 p-4 sm:flex-row flex-col">
                     <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 flex-shrink-0">
-                      {category?.icon}
+                      <Image
+                        src={category?.image}
+                        alt="product category image"
+                        className="h-full w-full rounded-full"
+                        width={300}
+                        height={300}
+                        responsive="true"
+                      />
                     </div>
                     <div className="flex-grow items-center flex">
                       <h2 className="text-gray-900 text-lg title-font font-medium  ">
@@ -154,7 +123,10 @@ const PCBuilder = () => {
             </div>
           ))}
           <div className="flex justify-center my-5">
-            <button className="btn btn-primary text-white " disabled={true}>
+            <button
+              className="btn btn-primary text-white "
+              disabled={Object.keys(pc)?.length < 6}
+            >
               Complete Build
             </button>
           </div>
@@ -166,3 +138,14 @@ const PCBuilder = () => {
 };
 
 export default PCBuilder;
+
+export const getServerSideProps = async function () {
+  const categoriesRes = await fetch("http://localhost:5000/api/v1/categories");
+  const categories = await categoriesRes.json();
+
+  return {
+    props: {
+      categories: categories?.data,
+    },
+  };
+};

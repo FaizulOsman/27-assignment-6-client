@@ -66,9 +66,12 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="hidden sm:flex btn btn-ghost normal-case text-xl">
+          <Link
+            href="/"
+            className="hidden sm:flex btn btn-ghost normal-case text-xl"
+          >
             BuildMasterPC
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
