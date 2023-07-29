@@ -26,9 +26,9 @@ const Login = () => {
             <svg
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               viewBox="0 0 24 24"
               className="w-5 h-5"
             >
@@ -48,7 +48,7 @@ const Login = () => {
             <svg
               fill="#FFC107"
               stroke="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               version="1.1"
               x="0px"
               y="0px"
