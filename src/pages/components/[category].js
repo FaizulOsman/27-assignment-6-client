@@ -31,7 +31,7 @@ const ComponentsPage = ({ products }) => {
             products?.map((product) => (
               <div key={product?.id} className="p-4   w-full">
                 <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-4 sm:flex-row flex-col">
-                  <div className="w-full h-40 sm:w-36 sm:h-36 sm:mr-4 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <div className="w-full h-40 sm:w-36 sm:h-24 sm:mr-4 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-500 flex-shrink-0">
                     <Image
                       src={product?.image}
                       className="w-full h-full rounded-lg"
@@ -41,12 +41,14 @@ const ComponentsPage = ({ products }) => {
                     />
                   </div>
                   <div className="flex-grow ">
-                    <h2 className="text-gray-900 text-lg title-font font-medium  ">
-                      {product?.productName}
-                    </h2>
-                    <p className="text-gray-500 text-xs title-font font-medium  mb-4">
-                      #{product?.category}
-                    </p>
+                    <div className="flex justify-between sm:justify-normal flex-row sm:flex-col items-center sm:items-start">
+                      <h2 className="text-gray-900 text-lg title-font font-medium  ">
+                        {product?.productName}
+                      </h2>
+                      <p className="text-gray-500 text-xs title-font font-medium mb-1">
+                        #{product?.category}
+                      </p>
+                    </div>
                     <div className="flex mb-1">
                       <span className="flex items-center">
                         <span className="text-gray-600 mr-3">
@@ -87,13 +89,15 @@ const ComponentsPage = ({ products }) => {
                             ))}
                       </span>
                     </div>
-                    <p className="text-base">Price: ${product?.price}</p>
-                    <p className="text-base">Status: {product?.status}</p>
+                    <p className="text-sm">Status: {product?.status}</p>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center justify-between flex-row sm:flex-col">
+                    <p className="text-xl font-bold text-[#22c55e]">
+                      ${product?.price}
+                    </p>
                     <button
                       onClick={() => handleAddToBuilder(product)}
-                      className="mt-3 sm:mt-0 w-full btn btn-accent text-white"
+                      className="mt-3 sm:mt-0 btn btn-accent btn-sm md:btn-md text-white"
                     >
                       Add To Builder
                     </button>
