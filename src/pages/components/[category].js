@@ -5,6 +5,7 @@ import { addComponent } from "@/redux/pcBuilderSlice/pcBuilderSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
 const ComponentsPage = ({ products }) => {
@@ -12,6 +13,9 @@ const ComponentsPage = ({ products }) => {
   const router = useRouter();
   console.log(products);
   const handleAddToBuilder = (product) => {
+    toast.success(
+      `You selected ${product?.productName} in Category ${product?.category}!`
+    );
     dispatch(addComponent(product));
     router.push("/pc-builder");
   };
