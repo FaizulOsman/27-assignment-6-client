@@ -6,6 +6,22 @@ import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 
 const HomePage = ({ products, categories }) => {
+  // Show Only 1 product by every category
+  let filteredProducts = [];
+  products?.data?.map((product) => {
+    if (filteredProducts?.length > 0) {
+      const isCategoryExist = filteredProducts?.find(
+        (item) => item?.category === product?.category
+      );
+
+      if (!isCategoryExist) {
+        filteredProducts.push(product);
+      }
+    } else {
+      filteredProducts.push(product);
+    }
+  });
+
   return (
     <>
       <Navbar />
@@ -14,7 +30,7 @@ const HomePage = ({ products, categories }) => {
           Featured Products
         </h1>
         <div className="container mx-auto bg-white pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {products?.data?.map((product) => (
+          {filteredProducts?.map((product) => (
             <Link key={product?.id} href={`/product/${product?.id}`}>
               <div className="card w-full glass hover:bg-gray-100">
                 <figure>
