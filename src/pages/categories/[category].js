@@ -22,7 +22,7 @@ const CategoriesPage = ({ products }) => {
             {products?.data?.map((product) => (
               <Link key={product?.id} href={`/product/${product?.id}`}>
                 <div className="card w-full glass hover:bg-gray-100">
-                  <figure>
+                  <figure className="h-40">
                     <Image
                       src={product?.image}
                       alt="product image"
@@ -63,7 +63,9 @@ const CategoriesPage = ({ products }) => {
 export default CategoriesPage;
 
 export const getStaticPaths = async function () {
-  const res = await fetch("http://localhost:5000/api/v1/pc-builder/products");
+  const res = await fetch(
+    "https://pc-builder-server-alpha.vercel.app/api/v1/pc-builder/products"
+  );
   const products = await res.json();
 
   const paths = products?.data?.map((product) => ({
@@ -77,7 +79,7 @@ export const getStaticProps = async function (context) {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/api/v1/pc-builder/categories/${params?.category}`
+    `https://pc-builder-server-alpha.vercel.app/api/v1/pc-builder/categories/${params?.category}`
   );
   const data = await res.json();
 

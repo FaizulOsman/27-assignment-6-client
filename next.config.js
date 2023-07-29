@@ -14,6 +14,7 @@ const nextConfig = {
       "static.vecteezy.com",
       "lh3.googleusercontent.com",
       "avatars.githubusercontent.com",
+      "i.ibb.co",
     ],
   },
 };

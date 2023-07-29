@@ -119,7 +119,7 @@ export const getServerSideProps = async function (context) {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/api/v1/pc-builder/categories/${params?.category}`
+    `https://pc-builder-server-alpha.vercel.app/api/v1/pc-builder/categories/${params?.category}`
   );
   const data = await res.json();
 

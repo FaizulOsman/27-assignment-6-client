@@ -145,7 +145,9 @@ const PCBuilder = ({ categories }) => {
 export default PCBuilder;
 
 export const getServerSideProps = async function () {
-  const categoriesRes = await fetch("http://localhost:5000/api/v1/categories");
+  const categoriesRes = await fetch(
+    "https://pc-builder-server-alpha.vercel.app/api/v1/categories"
+  );
   const categories = await categoriesRes.json();
 
   return {

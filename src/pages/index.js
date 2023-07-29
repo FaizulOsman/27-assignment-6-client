@@ -30,14 +30,14 @@ const HomePage = ({ products, categories }) => {
         <h1 className="text-2xl font-bold text-center text-black">
           Featured Products
         </h1>
-        <div className="container mx-auto bg-white pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="container mx-auto bg-white pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
           {!filteredProducts ? (
             <Loader />
           ) : (
             filteredProducts?.map((product) => (
               <Link key={product?.id} href={`/product/${product?.id}`}>
                 <div className="card w-full glass hover:bg-gray-100">
-                  <figure>
+                  <figure className="h-40">
                     <Image
                       src={product?.image}
                       alt="product image"
@@ -79,10 +79,14 @@ const HomePage = ({ products, categories }) => {
 export default HomePage;
 
 export const getStaticProps = async function () {
-  const res = await fetch("http://localhost:5000/api/v1/pc-builder/products");
+  const res = await fetch(
+    "https://pc-builder-server-alpha.vercel.app/api/v1/pc-builder/products"
+  );
   const data = await res.json();
 
-  const categoriesRes = await fetch("http://localhost:5000/api/v1/categories");
+  const categoriesRes = await fetch(
+    "https://pc-builder-server-alpha.vercel.app/api/v1/categories"
+  );
   const categories = await categoriesRes.json();
 
   return {
