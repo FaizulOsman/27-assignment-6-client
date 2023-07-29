@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 
-const HomePage = ({ products }) => {
+const HomePage = ({ products, categories }) => {
   return (
     <>
       <Navbar />
@@ -48,7 +48,7 @@ const HomePage = ({ products }) => {
             </Link>
           ))}
         </div>
-        <FeaturedCategories />
+        <FeaturedCategories categories={categories} />
       </div>
       <Footer />
     </>
@@ -60,9 +60,14 @@ export default HomePage;
 export const getStaticProps = async function () {
   const res = await fetch("http://localhost:5000/api/v1/pc-builder/products");
   const data = await res.json();
+
+  const categoriesRes = await fetch("http://localhost:5000/api/v1/categories");
+  const categories = await categoriesRes.json();
+
   return {
     props: {
       products: data,
+      categories: categories?.data,
     },
     revalidate: 30,
   };
