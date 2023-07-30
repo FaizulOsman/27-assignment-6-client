@@ -17,7 +17,9 @@ const Login = () => {
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-md text-white text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-transparent hover:border-purple-600 h-10 py-2 px-4 flex items-center justify-between gap-4"
             onClick={() =>
               signIn("github", {
-                callbackUrl: callbackUrl || "http://localhost:3000",
+                callbackUrl:
+                  callbackUrl ||
+                  "https://build-master-pc-faizulosman.vercel.app",
               })
             }
             type="button"
@@ -39,7 +41,9 @@ const Login = () => {
             className="gap-4 bg-gradient-to-r from-red-600 to-yellow-500 hover:from-red-700 hover:to-yellow-600 rounded-md text-white text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-transparent hover:border-red-600 h-10 py-2 px-4 flex items-center justify-between"
             onClick={() =>
               signIn("google", {
-                callbackUrl: callbackUrl || "http://localhost:3000",
+                callbackUrl:
+                  callbackUrl ||
+                  "https://build-master-pc-faizulosman.vercel.app",
               })
             }
             type="button"
@@ -53,7 +57,7 @@ const Login = () => {
               x="0px"
               y="0px"
               viewBox="0 0 48 48"
-              enable-background="new 0 0 48 48"
+              enableBackground="new 0 0 48 48"
               className="w-5 h-5"
             >
               <path

@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <div className="w-11/12 max-w-[1200px] mx-auto">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 border-b-2 border-gray-500">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

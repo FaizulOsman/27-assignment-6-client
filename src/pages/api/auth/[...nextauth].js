@@ -14,7 +14,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/login",
+    signIn: "https://build-master-pc-faizulosman.vercel.app/",
   },
 };
 
