@@ -27,6 +27,34 @@ const HomePage = ({ products, categories }) => {
     <>
       <Navbar />
       <div className="mt-16 w-11/12 max-w-[1200px] mx-auto">
+        <div className="container mx-auto flex px-5 pt-8 pb-24 md:flex-row flex-col items-center">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 border-4 border-gray-200 rounded-xl">
+            <Image
+              className="object-cover object-center w-full rounded-xl"
+              alt="hero"
+              src="https://i.ibb.co/xmnfTLJ/custom-pc-build-in-nepal-aliteq-001-1.jpg"
+              width={300}
+              height={300}
+            />
+          </div>
+          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+              Find the product you are looking
+              <br className="hidden lg:inline-block" />
+              for build your pc.
+            </h1>
+            <p className="mb-8 leading-relaxed">
+              Are you searching for the best websites to build your PC?
+            </p>
+            <div className="flex justify-center">
+              <Link href="/">
+                <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  See All Products
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
         <h1 className="text-2xl font-bold text-center text-black">
           Featured Products
         </h1>

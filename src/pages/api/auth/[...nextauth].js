@@ -13,8 +13,9 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "https://build-master-pc-faizulosman.vercel.app/",
+    signIn: "https://build-master-pc-faizulosman.vercel.app/login",
   },
 };
 
